@@ -28,6 +28,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
 
+    # Set a PATH in this environment.
+    - name: Set a path
+      run: echo "/home/godagoda/opt/app/cpptest_2023:/home/godagoda/opt/app/cpptest_2023/bin" >> $GITHUB_PATH
+      
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout code
       uses: actions/checkout@v3
