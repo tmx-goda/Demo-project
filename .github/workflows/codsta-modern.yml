@@ -32,6 +32,10 @@ jobs:
     - name: Set a path
       run: echo "/home/godagoda/opt/app/cpptest_2023:/home/godagoda/opt/app/cpptest_2023/bin" >> $GITHUB_PATH
       
+    # Del workspace
+    - name: Del workspace
+      run: rm -rf ../workspace      
+      
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout code
       uses: actions/checkout@v3
