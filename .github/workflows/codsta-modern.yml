@@ -3,7 +3,7 @@
 name: C/C++test with Make for modern code
 
 on:
-  # Triggers the workflow on push or pull request events but only for the master (main) branch.
+  # Triggers the workflow on push events.
   push:
 
   # Allows you to run this workflow manually from the Actions tab.
@@ -51,7 +51,7 @@ jobs:
         testConfig: 'c++test.dtp://MISRA C 2023_modern'
         reportFormat: xml,html,sarif
         input: './sampleproduct/cpptestscan.bdf'
-        commandLinePattern: '${cpptestcli} -data ../workspace -config "${testConfig}" -report "${reportDir}" -bdf "${input}" ${additionalParams}'
+        commandLinePattern: '${cpptestcli} -data ../workspace -config "${testConfig}" -report "${reportDir}" -bdf "${input}" ${additionalParams} -showdetails'
     
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
