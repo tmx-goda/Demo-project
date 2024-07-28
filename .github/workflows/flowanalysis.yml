@@ -56,7 +56,7 @@ jobs:
         testConfig: 'c++test.dtp://MISRA C 2023_flowanalysis'
         reportFormat: xml,html,sarif
         input: './sampleproduct/cpptestscan.bdf'
-        commandLinePattern: '${cpptestcli} -data ../workspace -config "${testConfig}" -report "${reportDir}" -bdf "${input}" ${additionalParams} -showdetails'
+        commandLinePattern: '${cpptestcli} -data ../workspace -config "${testConfig}" -report "${reportDir}" -bdf "${input}" ${additionalParams} -showdetails -publish'
     
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
