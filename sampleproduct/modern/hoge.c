@@ -10,3 +10,7 @@
 int TMX_func1(){
 	return 1;
 }
+
+int addval(int a, int b){
+	return a+b;
+}
