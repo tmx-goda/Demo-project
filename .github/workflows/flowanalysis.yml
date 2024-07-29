@@ -5,7 +5,7 @@ name: C/C++test with Make for flowanalysis
 on:
   # Triggers the workflow on at a fixed time.
   schedule:
-    - cron: '10 * * * 1-5'
+    - cron: '0 20 * * 1-5'
 
   # Allows you to run this workflow manually from the Actions tab.
   workflow_dispatch:
@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
   run-cpptest-make:
-    name: Analyze project with C/C++test for all
+    name: Analyze project with C/C++test for flowanalysis
 
     # Specifies the type of runner that the job will run on.
     runs-on: self-hosted
@@ -40,6 +40,8 @@ jobs:
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     
     # Builds your Make project using 'cpptesttrace' to collect input data for code analysis.
     # Be sure 'cpptesttrace' is available on $PATH.
