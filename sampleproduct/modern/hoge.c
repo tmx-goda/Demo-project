@@ -10,3 +10,8 @@
 int TMX_func1(){
 	return 1;
 }
+
+int TMX_CtoK(int t){
+int K;
+return t+K;
+}
