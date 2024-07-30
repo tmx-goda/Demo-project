@@ -7,6 +7,6 @@
 
 #include "piyo.h"
 
-int func3(void){
+int TMX_func3(void){
 	return 3;
 }

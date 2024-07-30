@@ -8,7 +8,7 @@
 #ifndef FUGA_H_
 #define FUGA_H_
 
-int func2(void);
+int TMX_func2(void);
 int TMX_func4(void);
 
 #endif /* FUGA_H_ */
