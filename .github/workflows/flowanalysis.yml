@@ -33,7 +33,6 @@ jobs:
       run: |
         if [ "${{ github.ref }}" != "refs/heads/future_branch" ]; then
           echo "This job will only run on future_branch. Skipping..."
-          echo "githb.ref=${ github.ref }"
           exit 0
         fi
         
