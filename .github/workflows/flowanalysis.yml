@@ -42,6 +42,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        fetch_branch: future_branch
     
     # Builds your Make project using 'cpptesttrace' to collect input data for code analysis.
     # Be sure 'cpptesttrace' is available on $PATH.
