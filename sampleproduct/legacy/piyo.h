@@ -8,6 +8,6 @@
 #ifndef PIYO_H_
 #define PIYO_H_
 
-int func3();
+int func3(void);
 
 #endif /* PIYO_H_ */
