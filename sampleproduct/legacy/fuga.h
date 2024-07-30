@@ -9,5 +9,6 @@
 #define FUGA_H_
 
 int func2();
+int func4();
 
 #endif /* FUGA_H_ */

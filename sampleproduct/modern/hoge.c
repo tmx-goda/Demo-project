@@ -10,3 +10,8 @@
 int TMX_func1(){
 	return 1;
 }
+
+int TMX_CelsiustoKelvin(int t){
+int k;
+return t+k;
+}
