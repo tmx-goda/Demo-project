@@ -93,16 +93,21 @@ jobs:
         input: './sampleproduct/cpptestscan.bdf'
         reportDir: report-flowanalysis
         commandLinePattern: '${cpptestcli} -data ../workspace -resource sampleproduct -config "${testConfig}" -report "${reportDir}" -bdf "${input}" ${additionalParams} -showdetails -publish'
+
+    # Rename and copy files
+    - name: Rename and copy file
+      if:  github.ref != 'refs/heads/develop'
+      run: |
+        mv report-modern/report.sarif report/report-modern.sarif
+        mv report-legacy/report.sarif report/report-legacy.sarif
     
     # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF)
       if:  github.ref != 'refs/heads/develop'
       uses: github/codeql-action/upload-sarif@v2
       with:
-        sarif_file: |
-          report-modern/report.sarif
-          report-legacy/report.sarif
-
+        sarif_output: report
+        
         # Uploads analysis results in the SARIF format, so that they are displayed as GitHub code scanning alerts.
     - name: Upload results (SARIF) flowanalysis
       if:  github.ref == 'refs/heads/develop'
