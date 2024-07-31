@@ -117,8 +117,8 @@ jobs:
       with:
         name: CpptestReports-modern
         path: |
-          reports-modern/*.*
-          reports-legacy/*.*
+          report-modern/*.*
+          report-legacy/*.*
 
     # Uploads an archive that includes all report files (.xml, .html, .sarif).
     - name: Archive reports flowanalysis
@@ -126,4 +126,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: CpptestReports-modern
-        path: reports-flowanalysis/*.*
+        path: report-flowanalysis/*.*
