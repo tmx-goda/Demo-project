@@ -3,6 +3,10 @@
 name: C/C++test with Make for flowanalysis
 
 on:
+  pull_request:
+    branches:
+      - develop
+      
   # Triggers the workflow on at a fixed time.
   schedule:
     - cron: '0 * * * 1-5'
@@ -12,7 +16,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel.
 jobs:
-  run-cpptest-make-for-merge-to-main:
+  run-cpptest-make:
     name: Analyze project with C/C++test for flowanalysis
 
     # Specifies the type of runner that the job will run on.
@@ -28,7 +32,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-        
+
+    - name: Check current branch
+      run: |
+        if [[ "${GITHUB_REF##*/}" != "develop" ]]; then
+          echo "Current branch is not 'main'. Exiting job."
+          exit 0
+        fi
+          
     # Set a PATH in this environment.
     - name: Set a path
       run: echo "/home/godagoda/opt/app/cpptest_2023:/home/godagoda/opt/app/cpptest_2023/bin" >> $GITHUB_PATH
