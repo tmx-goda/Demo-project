@@ -4,7 +4,7 @@ name: C/C++test with Make for legacy code
 
 on:
   # Triggers the workflow on push events.
-  push:
+#  push:
 
   # Allows you to run this workflow manually from the Actions tab.
   workflow_dispatch:
