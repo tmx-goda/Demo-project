@@ -36,7 +36,7 @@ jobs:
     - name: Check current branch
       if: ${{ github.ref }} != 'develop'
       run: |
-        echo "Current branch is not 'main'. Exiting job."
+        echo "Current branch is not 'develop' but ${{ github.ref }}. Exiting job."
         exit 0
           
     # Set a PATH in this environment.
