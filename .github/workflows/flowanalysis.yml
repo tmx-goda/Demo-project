@@ -28,13 +28,6 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job.
     steps:
-    
-    - name: Check Branch
-      run: |
-        if [ "${{ github.ref }}" != "refs/heads/future_branch" ]; then
-          echo "This job will only run on future_branch. Skipping..."
-          exit 0
-        fi
         
     # Set a PATH in this environment.
     - name: Set a path
@@ -47,8 +40,8 @@ jobs:
     # Checks out your repository under $GITHUB_WORKSPACE, so that your job can access it.
     - name: Checkout code
       uses: actions/checkout@v3
-      with:
-        ref: future_branch
+#      with:
+#        ref: future_branch
     
     # Builds your Make project using 'cpptesttrace' to collect input data for code analysis.
     # Be sure 'cpptesttrace' is available on $PATH.
