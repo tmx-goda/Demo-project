@@ -9,6 +9,6 @@
 #define FUGA_H_
 
 int func2();
-int func4();
+int TMX_func4(void);
 
 #endif /* FUGA_H_ */
