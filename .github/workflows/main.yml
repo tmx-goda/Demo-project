@@ -95,6 +95,11 @@ jobs:
         commandLinePattern: '${cpptestcli} -data ../workspace -resource sampleproduct -config "${testConfig}" -report "${reportDir}" -bdf "${input}" ${additionalParams} -showdetails -publish'
 
     # Rename and copy files
+    - name: Create report dir
+      if:  github.ref != 'refs/heads/develop'
+      run: mkdir report
+      
+    # Rename and copy files
     - name: Rename and copy file
       if:  github.ref != 'refs/heads/develop'
       run: |
