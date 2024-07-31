@@ -34,7 +34,7 @@ jobs:
     steps:
 
     - name: Check current branch
-      if: $GITHUB_REF != 'develop'
+      if: ${GITHUB_REF} != 'develop'
       run: |
         echo "Current branch is not 'main'. Exiting job."
         exit 0
