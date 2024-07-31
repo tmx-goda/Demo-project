@@ -20,7 +20,7 @@ jobs:
     name: Analyze project with C/C++test for flowanalysis
 
     # Specifies the type of runner that the job will run on.
-    if: ${{ github.ref }} != 'refs/heads/develop'
+    if:  github.ref == 'refs/heads/develop'
     runs-on: self-hosted
 
     # Specifies required permissions for upload-sarif action
@@ -35,7 +35,7 @@ jobs:
     steps:
 
     - name: Check current branch
-      if: ${{ github.ref }} != 'refs/heads/develop'
+      if: ${{ github.ref }} != "refs/heads/develop"
       run: |
         echo "Current branch is not 'develop' but ${{ github.ref }}. Exiting job."
         exit 0
