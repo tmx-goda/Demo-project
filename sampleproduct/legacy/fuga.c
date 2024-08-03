@@ -10,3 +10,7 @@
 int func2(){
 	return 2;
 }
+
+int TMX_func4(void){
+	return 4;
+}
