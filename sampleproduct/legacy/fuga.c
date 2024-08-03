@@ -11,6 +11,6 @@ int func2(){
 	return 2;
 }
 
-int func4(){
+int TMX_func4(void){
 	return 4;
 }
