@@ -10,3 +10,7 @@
 int func2(){
 	return 2;
 }
+
+int func4(){
+	return 4;
+}
