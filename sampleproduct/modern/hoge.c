@@ -10,3 +10,8 @@
 int TMX_func1(){
 	return 1;
 }
+
+float TMX_free_fall(float t){
+	float g=9.8;
+	return g*t;
+}
